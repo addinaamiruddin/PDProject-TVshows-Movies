@@ -1,0 +1,65 @@
+-------------------------------------------------
+	TV SHOWS & MOVIES RECOMMENDATIONS
+-------------------------------------------------
+WELCOME!
+
+Enter your name :
+Enter your age	:
+
+	1. TV SHOWS
+	2. MOVIES
+
+What do you want to watch? [1/2] :
+-------------------------------------------------
+Genre Codes :
+	1. Comedy	5. Mystery
+	2. Fantasy	6. Musical // Horror
+	3. Sci-fi	7. Animated // Romance
+	4. Adventure	8. Educational // Thriller
+
+Choose your favourite genre :
+--------------------------------------------------
+Name		: 
+Age		:
+Favourite genre	:
+
+Here are some recommendations for you!
+-
+-
+-
+-
+-
+--------------------------------------------------
+Do you want more recommendations? [Y/N]	: Y
+
+	1. TV SHOWS
+	2. MOVIES
+
+What do you want to watch? [1/2] : 
+---------------------------------------------------
+Genre Codes :
+	1. Comedy	5. Mystery
+	2. Fantasy	6. Musical // Horror
+	3. Sci-fi	7. Animated // Romance
+	4. Adventure	8. Educational // Thriller
+
+Choose your favourite genre :
+---------------------------------------------------
+Name		: 
+Age		:
+Favourite genre	:
+
+Here are some recommendations for you!
+-
+-
+-
+-
+-
+
+Do you want more recommendations? [Y/N]	: N
+
+Thank you! Happy watching :D
+
+
+
+
