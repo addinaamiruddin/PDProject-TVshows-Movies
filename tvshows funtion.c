@@ -2,9 +2,10 @@
 
 //return function 
 //if else for diff age categories 
+//switch case for genre
 //return an array[5] of recommended movies
 
-void main ()
+char tvshows ()
 {
 	//genres based on age categories
 	
