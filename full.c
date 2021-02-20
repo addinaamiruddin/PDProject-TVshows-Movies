@@ -13,19 +13,18 @@ struct Viewer
 
 //MOVIE
 
-void movie(struct Viewer watcher);
+void movie(struct Viewer *);
 
-void movie(struct Viewer watcher)
+void movie(struct Viewer *p)
 {
-	printf ("\nName\t\t: %s", watcher.name);
-	printf ("\nAge\t\t: %d", watcher.age);
-	printf ("\nFavorite Genre\t: %s", watcher.genre);
+	printf ("\nName\t\t: %s", p->name);
+	printf ("\nAge\t\t: %d", p->age);
+	printf ("\nFavorite Genre\t: %s", p->genre);
 	printf ("\n\n");
 
-	int genre;
-       if(watcher.age<=12)
+       if(p->age<=12)
     {
-        switch(watcher.genre_code)
+        switch(p->genre_code)
 		{
         	case 1:
         	printf("Here are some recommendations for you!");
@@ -100,9 +99,9 @@ void movie(struct Viewer watcher)
 			break;
 		}
     }
-    else if(watcher.age>12 && watcher.age<=19) //TEENAGERS
+    else if(p->age>12 && p->age<=19) //TEENAGERS
     {
-    	switch(watcher.genre_code)
+    	switch(p->genre_code)
     	{
     		case 1: //COMEDY
         	printf("Here are some recommendations for you!");
@@ -176,9 +175,9 @@ void movie(struct Viewer watcher)
         	printf("\n- Kin");
 			break;
 		}
-	} else if(watcher.age>19) //ADULTS
+	} else if(p->age>19) //ADULTS
     {
-    	switch(watcher.genre_code)
+    	switch(p->genre_code)
     	{
     		case 1: //COMEDY
         	printf("Here are some recommendations for you!");
@@ -256,24 +255,24 @@ void movie(struct Viewer watcher)
 
 	FILE *fresult;
 	fresult = fopen("preferences.txt", "w");
-	fprintf (fresult, "%s %d %s", watcher.name, watcher.age, watcher.genre);
+	fprintf (fresult, "%s %d %s", p->name, p->age, p->genre);
 	fclose(fresult);
 }
 
 //TV SHOW
 
-void tvshow (struct Viewer watcher);
+void tvshow (struct Viewer *);
 
-void tvshow (struct Viewer watcher)
+void tvshow (struct Viewer *p)
 {
-	printf ("\nName\t\t: %s", watcher.name);
-	printf ("\nAge\t\t: %d", watcher.age);
-	printf ("\nFavorite Genre\t: %s", watcher.genre);
+	printf ("\nName\t\t: %s", p->name);
+	printf ("\nAge\t\t: %d", p->age);
+	printf ("\nFavorite Genre\t: %s", p->genre);
 	
 	printf("\n\nHere are some recommendations for you!\n\n");
-	if (watcher.age<=12)
+	if (p->age<=12)
 	{
-		switch (watcher.genre_code)
+		switch (p->genre_code)
 		{
 			case 1 : // COMEDY
 				printf ("- The Loud House \nSpongebob Squarepants \n- The Boss Baby : Back in Business \n- Chowder \n- Pony");
@@ -308,9 +307,9 @@ void tvshow (struct Viewer watcher)
 				break;			
 		}
 		
-	} else if (watcher.age>12 && watcher.age<=19)
+	} else if (p->age>12 && p->age<=19)
 	{
-		switch (watcher.genre_code)
+		switch (p->genre_code)
 		{
 			case 1 : // COMEDY
 				printf ("- Victorious \n- Family Guy \n- Brooklyn 99 \n- - Big Time Rush \n- Big Mouth");
@@ -344,9 +343,9 @@ void tvshow (struct Viewer watcher)
 				printf ("- Stranger Things \n- Black Mirror \n- Elite \n- Breaking Bad \n- Money Heist");
 			break;			
 		}
-	} else if (watcher.age>19)
+	} else if (p->age>19)
 	{
-		switch (watcher.genre_code)
+		switch (p->genre_code)
 		{
 			case 1 : // COMEDY
 				printf ("- Fresh Off The Boat \n- The Goldbergs \n- The Unicorn \n- Full House \n- The Big Bang Theory");
@@ -384,7 +383,7 @@ void tvshow (struct Viewer watcher)
 	
 	FILE *fresult;
 	fresult = fopen("preferences.txt", "w");
-	fprintf (fresult, "%s %d %s", watcher.name, watcher.age, watcher.genre);
+	fprintf (fresult, "%s %d %s", p->name, p->age, p->genre);
 	fclose(fresult);
 
 }
@@ -503,10 +502,10 @@ void age_determine(struct Viewer watcher)
 	
 	if (watcher.choice==1)
 	{
-		tvshow(watcher);
+		tvshow(&watcher);
 	} else if (watcher.choice==2)
 	{
-		movie(watcher);
+		movie(&watcher);
 	}
 	
 	fflush(stdin);
