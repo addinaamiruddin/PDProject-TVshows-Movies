@@ -17,17 +17,16 @@ void movie(struct Viewer *);
 
 void movie(struct Viewer *p)
 {
-	//DISPLAY 
 	printf ("\nName\t\t: %s", p->name);
 	printf ("\nAge\t\t: %d", p->age);
 	printf ("\nFavorite Genre\t: %s", p->genre);
 	printf ("\n\n");
 
-       if(p->age<=12) //CHILDREN
+       if(p->age<=12)
     {
         switch(p->genre_code)
 		{
-        	case 1: //COMEDY
+        	case 1:
         	printf("Here are some recommendations for you!");
         	printf("\n- The Secret Life of Pets");
         	printf("\n- Spies in Disguise");
@@ -36,7 +35,7 @@ void movie(struct Viewer *p)
         	printf("\n- Sonic the Hedgehog");
 			break;
 				
-			case 2: //FANTASY
+			case 2:
         	printf("Here are some recommendations for you!");
         	printf("\n- Over the Moon");
         	printf("\n- Dolittle");
@@ -45,7 +44,7 @@ void movie(struct Viewer *p)
         	printf("\n- Into the woods");
 			break;
 		
-			case 3: //SCIFI
+			case 3:
         	printf("Here are some recommendations for you!");
         	printf("\n- Next Gen");
         	printf("\n- Ralph Breaks the Internet");
@@ -54,7 +53,7 @@ void movie(struct Viewer *p)
         	printf("\n- Despicable Me");
 			break;
 			
-			case 4: //ADVENTURE
+			case 4:
         	printf("Here are some recommendations for you!");
         	printf("\n- Dora and the Lost City of Gold");
         	printf("\n- Mary Poppin Returns");
@@ -63,7 +62,7 @@ void movie(struct Viewer *p)
         	printf("\n- The Jungle Book");
 			break;
 			
-			case 5: //MYSTERY
+			case 5:
         	printf("Here are some recommendations for you!");
         	printf("\n- Scooby-Doo");
         	printf("\n- Monster House");
@@ -72,7 +71,7 @@ void movie(struct Viewer *p)
         	printf("\n- Mystic River");
 			break;
 		
-			case 6: //MUSICAL
+			case 6:
         	printf("Here are some recommendations for you!");
         	printf("\n- Smallfoot");
         	printf("\n- A Cinderella Story : Christmas Wish");
@@ -81,7 +80,7 @@ void movie(struct Viewer *p)
         	printf("\n- Trolls World Tour");
 			break;
 		
-			case 7: //ANIMATED
+			case 7:
         	printf("Here are some recommendations for you!");
         	printf("\n- The Good Dinosaur");
         	printf("\n- Brave");
@@ -90,7 +89,7 @@ void movie(struct Viewer *p)
         	printf("\n- Kung Fu Panda");
 			break;
 		
-			case 8: //EDUCATIONAL
+			case 8:
         	printf("Here are some recommendations for you!");
         	printf("\n- Harry Potter and the Philosopher's Stone");
         	printf("\n- The Polar Express");
@@ -253,27 +252,25 @@ void movie(struct Viewer *p)
 			break;
 	}
 	}
-	
-	//WRITE RESULT TO FILE
+
 	FILE *fresult;
 	fresult = fopen("preferences.txt", "w");
 	fprintf (fresult, "%s %d %s", p->name, p->age, p->genre);
 	fclose(fresult);
 }
 
-//TV SHOWS
+//TV SHOW
 
 void tvshow (struct Viewer *);
 
 void tvshow (struct Viewer *p)
 {
-	//DISPLAY
 	printf ("\nName\t\t: %s", p->name);
 	printf ("\nAge\t\t: %d", p->age);
 	printf ("\nFavorite Genre\t: %s", p->genre);
 	
 	printf("\n\nHere are some recommendations for you!\n\n");
-	if (p->age<=12) //CHILDREN
+	if (p->age<=12)
 	{
 		switch (p->genre_code)
 		{
@@ -282,7 +279,7 @@ void tvshow (struct Viewer *p)
 				break;
 				
 			case 2 : // FANTASY
-				printf ("- Winx Club \nDescendants : Wicked World \n- The Letter for the King \n- A Series of Unfortunate Events \n- The Fairly OddParents");	
+				printf ("- Winx Club \n- Descendants : Wicked World \n- The Letter for the King \n- A Series of Unfortunate Events \n- The Fairly OddParents");	
 				break;
 			
 			case 3 : // SCI-FI
@@ -310,9 +307,9 @@ void tvshow (struct Viewer *p)
 				break;			
 		}
 		
-	} else if (p->age>12 && p->age<=19) //TEENAGERS
+	} else if (p->age>12 && p->age<=19)
 	{
-		switch (p->genre_code) 
+		switch (p->genre_code)
 		{
 			case 1 : // COMEDY
 				printf ("- Victorious \n- Family Guy \n- Brooklyn 99 \n- - Big Time Rush \n- Big Mouth");
@@ -335,7 +332,7 @@ void tvshow (struct Viewer *p)
 			break;
 			
 			case 6 : // HORROR
-				printf ("- Stranger Things \n- Chilling Adventures of Sabrina \n- Sweet Home \n- The Originals \n- Stranger Things");
+				printf ("- Stranger Things \n- Chilling Adventures of Sabrina \n- Sweet Home \n- The Originals \n- ");
 			break;
 			
 			case 7 : // ROMANCE
@@ -346,7 +343,7 @@ void tvshow (struct Viewer *p)
 				printf ("- Stranger Things \n- Black Mirror \n- Elite \n- Breaking Bad \n- Money Heist");
 			break;			
 		}
-	} else if (p->age>19) //ADULTS
+	} else if (p->age>19)
 	{
 		switch (p->genre_code)
 		{
@@ -384,7 +381,6 @@ void tvshow (struct Viewer *p)
 		}
 	}
 	
-	//WRITE RESULT TO FILE
 	FILE *fresult;
 	fresult = fopen("preferences.txt", "w");
 	fprintf (fresult, "%s %d %s", p->name, p->age, p->genre);
@@ -392,7 +388,7 @@ void tvshow (struct Viewer *p)
 
 }
 
-//FUNCTION AGE_DETERMINE
+//AGE_DETERMINE
 void age_determine(struct Viewer watcher);
 void age_determine(struct Viewer watcher)
 {
@@ -400,15 +396,16 @@ void age_determine(struct Viewer watcher)
 
     do
     {
-		printf("\n\t1. TV SHOWS");
-		printf("\n\t2. MOVIES");
-	
-	//ASK USER
-	printf("\n\nWhat do you want to watch? [1/2] : ");
-    	scanf("%d", &watcher.choice);
-    	printf("---------------------------------------------");
+		printf("\n=======================================\n");
+		printf("\t     1. TV SHOWS\n");
+		printf("\t     2. MOVIES");
+		printf("\n=======================================\n");
+
+	    	printf("\nWhat do you want to watch [1/2] : ");
+    		scanf("%d", &watcher.choice);
+    		printf("\n----------------------------------------");
 		
-		if(watcher.age <= 12) //CHILDREN
+		if(watcher.age <= 12)
 		{
 			printf("\nGenre Codes :");
         	printf("\n\t1. Comedy         5. Mystery");
@@ -455,7 +452,7 @@ void age_determine(struct Viewer watcher)
         			break;
         	}
 
-		} else if(watcher.age >= 13) //TEENAGERS/ADULTS
+		} else if(watcher.age >= 13)
 		{
 	        printf("\nGenre Codes :");
 	        printf("\n\t1. Comedy         5. Mystery");
@@ -504,6 +501,7 @@ void age_determine(struct Viewer watcher)
 		}
 	
 	//CALLING FUNCTION FOR TV SHOW/MOVIE
+	
 	if (watcher.choice==1)
 	{
 		tvshow(&watcher);
@@ -511,8 +509,7 @@ void age_determine(struct Viewer watcher)
 	{
 		movie(&watcher);
 	}
-	    
-	//ASK IF USER WISHES TO CONTINUE
+	
 	fflush(stdin);
 	printf ("\n\nDo you want more recommendations? [Y/N] : ");
 	scanf ("%c", &ans);
@@ -525,20 +522,19 @@ void main ()
 	struct Viewer watcher;
 	
 	//DISPLAY
-	printf("----------------------------------------------");
-    printf("\n     TV SHOWS & MOVIES RECOMMENDATIONS");
-    printf("\n--------------------------------------------");
+	printf("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
+    	printf("    TV SHOWS & MOVIES RECOMMENDATIONS\n");
+    	printf("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n");
 
-    printf("\n\t\tWELCOME!");
-	
-	//PROMPT USER FOR INPUT
+    	printf("\n\t\tGOOD DAY\n");
+    	printf("\n\tA VERY WARM WELCOME TO YOU!");
+
 	fflush(stdin);
     printf("\n\nEnter your name : ");
     gets(watcher.name); 
     printf("Enter your age  : ");
     scanf("%d", &watcher.age);
-	
-	//CALL FUNCTION
+
 	age_determine(watcher);
 	printf ("\nThank you! Happy watching :D");
 }
